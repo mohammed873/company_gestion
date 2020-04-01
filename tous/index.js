@@ -203,19 +203,45 @@ function validfeedbackfooter(){
 }
 
 $(document).ready(function(){
-    
-   $('#button-addon2').click(function (){ 
+
+// the search function
+   $('#recherche-Employee').keyup(function (){ 
          var NomSalarie =$('.nomMatricule');
        //  console.log($('.nomMatricule').innerText);
-        var recherch=$('#recherche');
-  console.log(NomSalarie.length);
+        var recherch=$('#recherche-Employee');
+         //console.log(NomSalarie.length);
         for(var i=0; i<NomSalarie.length;i++){
         if(recherch.val()===NomSalarie[i].innerText){
-          $(NomSalarie[i]).parents('.divs').toggleClass("dsalarie");
+          $(NomSalarie[i]).parents('.divs').css("box-shadow","0px 0px 20px yellow");
+          $(NomSalarie[i]).parents('.divs').css("flex-basis","29%");
+           $("#recherche-Employee").val('');
+        }else{
+            $(NomSalarie[i]).parents('.divs').css("box-shadow","9px 8px 9px grey");
+            $(NomSalarie[i]).parents('.divs').css("flex-basis","25%");
         }
     }
 }
    );
+
+   $('#recherche-company').keyup(function (){ 
+    var NomCompany =$('.company_nom');
+  //  console.log($('.nomMatricule').innerText);
+   var recherch=$('#recherche-company');
+    //console.log(NomSalarie.length);
+   for(var i=0; i<NomCompany.length;i++){
+   if(recherch.val()===NomCompany[i].innerText){
+    $(NomCompany[i]).parents('#first').css("width","26%");     
+     $(NomCompany[i]).parents('#first').css("box-shadow","0px 0px 20px yellow");
+      $("#recherche-company").val('');
+   }else{
+       $(NomCompany[i]).parents('#first').css("box-shadow","5px 11px 25px");
+       $(NomCompany[i]).parents('#first').css("width","24%");
+   }
+}
+}
+   );
+
+   // close add departement pop up 
     $('#close').click(function(){
         $('#section1').toggle();
         $('#firstH1').text("");
@@ -262,5 +288,4 @@ var first=document.getElementById('first');
           section1.style.display="flex";
      console.log("s1");
  }
-
 

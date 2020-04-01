@@ -24,11 +24,6 @@ body{
   height: 2px;
   transition: all 500ms ease;
 }
-@media (min-width: 768px) {
-  .navbar-b.navbar-trans .nav-link:before, .navbar-b.navbar-reduce .nav-link:before {
-    margin-left: 18px;
-  }
-}
 .navbar-b.navbar-trans .nav-link:hover:before, .navbar-b.navbar-reduce .nav-link:hover:before {
   width: 35px;
 }
@@ -48,8 +43,16 @@ body{
   visibility: visible !important;
 }
 /*--/ Hamburger Navbar /--*/
-.navbar-toggler {
-  position: relative;
+@media (max-width: 768px) {
+  #navbar-toggle {
+    position: relative;
+    left: 60% !important;
+  }
+  #mb-3{
+    position: relative !important;
+    left: -20% !important;
+    width: 51% !important;
+  }
 }
 .navbar-toggler:focus,
 .navbar-toggler:active {
@@ -365,8 +368,9 @@ margin-top: 18px;
   left: 10px;
 }
 #dDépartement{
-  border: 1px dotted white;
+  border: 2px dotted black;
   margin: 10px;
+  background-color: beige;
 }
 #dDépartement{
   display: none;
@@ -406,7 +410,7 @@ margin-top: 18px;
       background: linear-gradient(60deg, gray, #138496);
       box-shadow: 9px 8px 9px grey;
       margin: 20px;
-      display: grid;
+      display: flex;
       color: antiquewhite;
   }
   #infor{
@@ -429,10 +433,10 @@ margin-top: 18px;
       margin: 20px;
   }
   #mb-3{
-    width: 30%;
+    width: 37%;
     position: relative;
     top: 10px;
-    left: 28%;
+    left: 25%;
   }
   .dsalarie{
     box-shadow: -10px 8px 9px #abc1c8;
